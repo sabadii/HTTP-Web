@@ -1,6 +1,7 @@
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
 
+import java.net.URI;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -12,7 +13,7 @@ public class Request {
     }
 
     public String getQueryParam(String name){
-        List<NameValuePair> params = URLEncodedUtils.parse(requestLine, "UTF-8");
+        List<NameValuePair> params = URLEncodedUtils.parse(URI.create(requestLine), "UTF-8");
         for (NameValuePair param: params){
             if (param.getName().equals(name)){
                 return param.getValue();
@@ -21,7 +22,7 @@ public class Request {
         return null;
     }
     public Map<String, String> getQueryParams(){
-        List<NameValuePair> params = URLEncodedUtils.parse(requestLine, "UTF-8");
+        List<NameValuePair> params = URLEncodedUtils.parse(URI.create(requestLine), "UTF-8");
         Map<String, String> queryParams = new HashMap<>();
         for (NameValuePair param : params){
             queryParams.put(param.getName(), param.getValue());
