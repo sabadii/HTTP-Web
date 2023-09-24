@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -91,6 +92,10 @@ public class Server {
                 Files.copy(filePath, out);
                 out.flush();
             }
+
+            Request request = new Request(requestLine);
+            String paramValue = request.getQueryParam("paramName");
+            Map<String, String> queryParams = request.getQueryParams();
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
