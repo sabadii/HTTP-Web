@@ -8,6 +8,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
@@ -35,7 +36,6 @@ public class Server {
         ) {
             final var requestLine = in.readLine();
             final var parts = requestLine.split(" ");
-
 
             if (parts.length != 3) {
                 out.write(("HTTP/1.1 400 Bad Request\r\n" +
@@ -91,8 +91,14 @@ public class Server {
                 Files.copy(filePath, out);
                 out.flush();
             }
+
+            Request request = new Request(requestLine);
+            String paramValue = request.getQueryParam("paramName");
+            Map<String, String> queryParams = request.getQueryParams();
+
         } catch (IOException e) {
             e.printStackTrace();
+
         } finally {
             try {
                 socket.close();
