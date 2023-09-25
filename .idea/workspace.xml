@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="aee08a46-045c-4efd-86b4-dad554198609" name="Changes" comment="" />
+    <list default="true" id="aee08a46-045c-4efd-86b4-dad554198609" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Request.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +98,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1695458366824</updated>
-      <workItem from="1695458367810" duration="12858000" />
+      <workItem from="1695458367810" duration="15436000" />
     </task>
     <task id="LOCAL-00001" summary="initial commit">
       <option name="closed" value="true" />
@@ -122,7 +124,15 @@
       <option name="project" value="LOCAL" />
       <updated>1695566788942</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="wrapping using URI.creat()">
+      <option name="closed" value="true" />
+      <created>1695568259345</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1695568259345</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -144,6 +154,9 @@
     <MESSAGE value="refactored" />
     <MESSAGE value="adding" />
     <MESSAGE value="processing parameters from Query" />
-    <option name="LAST_COMMIT_MESSAGE" value="processing parameters from Query" />
+    <MESSAGE value="wraped using" />
+    <MESSAGE value="wraped using URI." />
+    <MESSAGE value="wrapping using URI.creat()" />
+    <option name="LAST_COMMIT_MESSAGE" value="wrapping using URI.creat()" />
   </component>
 </project>

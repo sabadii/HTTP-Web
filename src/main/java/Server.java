@@ -37,7 +37,6 @@ public class Server {
             final var requestLine = in.readLine();
             final var parts = requestLine.split(" ");
 
-
             if (parts.length != 3) {
                 out.write(("HTTP/1.1 400 Bad Request\r\n" +
                         "Content-Length: 0\r\n" +
@@ -96,8 +95,10 @@ public class Server {
             Request request = new Request(requestLine);
             String paramValue = request.getQueryParam("paramName");
             Map<String, String> queryParams = request.getQueryParams();
+
         } catch (IOException e) {
             e.printStackTrace();
+
         } finally {
             try {
                 socket.close();

@@ -8,23 +8,25 @@ import java.util.Map;
 
 public class Request {
     final String requestLine;
-    public Request(String requestLine){
+    final Map<String, String> queryParams;
+
+    public Request(String requestLine) {
         this.requestLine = requestLine;
+        this.queryParams = parseQueryParams();
     }
 
-    public String getQueryParam(String name){
-        List<NameValuePair> params = URLEncodedUtils.parse(URI.create(requestLine), "UTF-8");
-        for (NameValuePair param: params){
-            if (param.getName().equals(name)){
-                return param.getValue();
-            }
-        }
-        return null;
+    public String getQueryParam(String name) {
+        return queryParams.get(name);
     }
-    public Map<String, String> getQueryParams(){
+
+    public Map<String, String> getQueryParams() {
+        return queryParams;
+    }
+
+    private Map<String, String> parseQueryParams() {
         List<NameValuePair> params = URLEncodedUtils.parse(URI.create(requestLine), "UTF-8");
         Map<String, String> queryParams = new HashMap<>();
-        for (NameValuePair param : params){
+        for (NameValuePair param : params) {
             queryParams.put(param.getName(), param.getValue());
         }
         return queryParams;
